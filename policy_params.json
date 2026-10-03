@@ -1,0 +1,359 @@
+{
+  "description": "Chiến thuật suy ra từ nhãn train với đồ thị lấy từ scenes.json (oracle perception).",
+  "common_rules": [
+    "Bỏ cạnh đóng, không đi ngược đường một chiều, chỉ robot 4 đi bậc thang.",
+    "Có via: tối ưu tổng chi phí start→via→goal (trạng thái giữ cả hướng để tính phí rẽ).",
+    "Tham chiếu không gian chỉ rõ thì dùng đúng ô đó; nếu loại địa điểm có 2 bản và không chỉ rõ, robot lập kế hoạch chọn bản cho tổng chi phí nhỏ nhất.",
+    "Hòa chi phí: ưu tiên đi thẳng > rẽ phải > rẽ trái > quay đầu so với hướng mũi robot."
+  ],
+  "tie_break": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "tie_break_meaning": "thứ tự ưu tiên khi hòa, theo kiểu rẽ so với hướng mũi: 0=thẳng, 1=phải, 2=trái, 3=quay đầu",
+  "robots": {
+    "0": {
+      "kind": "plan",
+      "condition": null,
+      "params": {
+        "default": {
+          "edge": {
+            "normal": 1,
+            "crowded": 1,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Tia Chớp",
+      "rule": "Ít cạnh nhất (mọi đoạn chi phí 1)."
+    },
+    "1": {
+      "kind": "plan",
+      "condition": null,
+      "params": {
+        "default": {
+          "edge": {
+            "normal": 1,
+            "crowded": 6,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Yên Tĩnh",
+      "rule": "Đường đông tốn 6, còn lại 1."
+    },
+    "2": {
+      "kind": "plan",
+      "condition": null,
+      "params": {
+        "default": {
+          "edge": {
+            "normal": 1,
+            "crowded": 1,
+            "covered": 0.5
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Mái Hiên",
+      "rule": "Đường mái che tốn 0.5, còn lại 1."
+    },
+    "3": {
+      "kind": "plan",
+      "condition": "rain",
+      "params": {
+        "true": {
+          "edge": {
+            "normal": 1,
+            "crowded": 1,
+            "covered": 0.2
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        },
+        "false": {
+          "edge": {
+            "normal": 1,
+            "crowded": 3,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Mây Mưa",
+      "rule": "Mưa: mái che tốn 0.2 (rất thích mái che). Khô: đường đông tốn 3."
+    },
+    "4": {
+      "kind": "plan",
+      "condition": "rain",
+      "params": {
+        "true": {
+          "edge": {
+            "normal": 1,
+            "crowded": 2,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": true,
+          "stairs_cost": 4,
+          "first_turn": true,
+          "oneway_cost": 0
+        },
+        "false": {
+          "edge": {
+            "normal": 1,
+            "crowded": 2,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": true,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Sơn Dương",
+      "rule": "Đi được bậc thang; đường đông tốn 2. Mưa: mỗi đoạn bậc thang tốn thêm 4. Khô: bậc thang không tốn thêm."
+    },
+    "5": {
+      "kind": "plan",
+      "condition": null,
+      "params": {
+        "default": {
+          "edge": {
+            "normal": 1,
+            "crowded": 1,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            3,
+            3,
+            30
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Thẳng Tắp",
+      "rule": "Ít cạnh + mỗi lần rẽ trái/phải tốn 3, quay đầu tốn 30 (tính cả bước đầu so với hướng mũi)."
+    },
+    "6": {
+      "kind": "plan",
+      "condition": "urgent",
+      "params": {
+        "true": {
+          "edge": {
+            "normal": 1,
+            "crowded": 1,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        },
+        "false": {
+          "edge": {
+            "normal": 1,
+            "crowded": 5,
+            "covered": 0.9
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Hỏa Tốc",
+      "rule": "Gấp: ít cạnh nhất. Không gấp: đường đông tốn 5, mái che 0.9."
+    },
+    "7": {
+      "kind": "plan",
+      "condition": "fragile",
+      "params": {
+        "true": {
+          "edge": {
+            "normal": 1,
+            "crowded": 7,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            1.5,
+            1.5,
+            15
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        },
+        "false": {
+          "edge": {
+            "normal": 1,
+            "crowded": 1,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Nâng Niu",
+      "rule": "Dễ vỡ: đường đông tốn 7, rẽ tốn 1.5, quay đầu tốn 15. Không dễ vỡ: ít cạnh nhất."
+    },
+    "8": {
+      "kind": "plan",
+      "condition": null,
+      "params": {
+        "default": {
+          "edge": {
+            "normal": 1,
+            "crowded": 1,
+            "covered": 1
+          },
+          "turn": [
+            0,
+            0.5,
+            4.5,
+            9
+          ],
+          "legged": false,
+          "stairs_cost": 0,
+          "first_turn": true,
+          "oneway_cost": 0
+        }
+      },
+      "name": "Lề Phải",
+      "rule": "Ít cạnh + rẽ phải tốn 0.5, rẽ trái tốn 4.5, quay đầu tốn 9."
+    },
+    "9": {
+      "kind": "greedy",
+      "condition": null,
+      "params": {
+        "default": {
+          "edge_penalty": {
+            "normal": 0,
+            "crowded": 0.3,
+            "covered": 0
+          },
+          "legged": false
+        }
+      },
+      "name": "Tham Lam",
+      "rule": "Tham lam: chọn đích trước mắt (via nếu có) là bản gần ô xuất phát nhất theo Manhattan (hòa thì (hàng, cột) nhỏ hơn); đi sang ô kề có Manhattan tới đích nhỏ nhất, đường đông +0.3."
+    }
+  },
+  "oracle_accuracy": {
+    "train": {
+      "macro_accuracy": 1.0,
+      "per_robot": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 1.0,
+        "7": 1.0,
+        "8": 1.0,
+        "9": 1.0
+      }
+    },
+    "validation": {
+      "macro_accuracy": 1.0,
+      "per_robot": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 1.0,
+        "7": 1.0,
+        "8": 1.0,
+        "9": 1.0
+      }
+    }
+  }
+}

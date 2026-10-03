@@ -1,0 +1,772 @@
+{
+  "train": {
+    "rows": 20000,
+    "scenes": 2000,
+    "images": 2000,
+    "has_labels": true,
+    "has_scenes_json": true,
+    "image": {
+      "format": {
+        "PNG": 1778,
+        "JPEG": 222
+      },
+      "top_sizes": {
+        "1152x864": 507,
+        "1024x768": 479,
+        "1120x840": 438,
+        "1024x1024": 172,
+        "960x960": 125,
+        "1024x896": 121,
+        "1136x848": 25,
+        "992x992": 17
+      },
+      "n_distinct_sizes": 36
+    },
+    "style": {
+      "sketch": 496,
+      "classic": 520,
+      "print": 478,
+      "night": 506
+    },
+    "degradation": {
+      "rotation_deg": {
+        "min": -2.5,
+        "median": 0.0,
+        "mean": -0.01,
+        "max": 2.48
+      },
+      "pct_rotated": 36.2,
+      "pct_blur": 21.4,
+      "pct_jpeg": 11.1,
+      "jpeg_quality": {
+        "min": 60,
+        "median": 73,
+        "mean": 73.21,
+        "max": 85
+      }
+    },
+    "legend_swapped": {
+      "pct_scenes": 14.7,
+      "patterns": {
+        "{\"covered\": \"covered\", \"crowded\": \"normal\", \"normal\": \"crowded\"}": 69,
+        "{\"covered\": \"crowded\", \"crowded\": \"covered\", \"normal\": \"normal\"}": 67,
+        "{\"covered\": \"normal\", \"crowded\": \"crowded\", \"normal\": \"covered\"}": 62,
+        "{\"covered\": \"crowded\", \"crowded\": \"normal\", \"normal\": \"covered\"}": 54,
+        "{\"covered\": \"normal\", \"crowded\": \"covered\", \"normal\": \"crowded\"}": 42
+      }
+    },
+    "grid": {
+      "rows_x_cols_top": {
+        "7x8": 132,
+        "8x8": 128,
+        "8x7": 127,
+        "6x6": 123,
+        "8x5": 120,
+        "7x5": 120,
+        "8x6": 119,
+        "7x6": 117,
+        "6x7": 115,
+        "7x7": 112
+      },
+      "rows": {
+        "min": 5,
+        "median": 7,
+        "mean": 6.69,
+        "max": 9
+      },
+      "cols": {
+        "min": 5,
+        "median": 7,
+        "mean": 6.64,
+        "max": 9
+      },
+      "missing_nodes_per_scene": {
+        "min": 0,
+        "median": 1,
+        "mean": 1.46,
+        "max": 4
+      },
+      "edges_per_scene": {
+        "min": 22,
+        "median": 58,
+        "mean": 60.72,
+        "max": 116
+      },
+      "edge_density_vs_full_grid": {
+        "min": 0.55,
+        "median": 0.803,
+        "mean": 0.8,
+        "max": 1.0
+      },
+      "edge_status_pct": {
+        "normal": 46.4,
+        "covered": 24.2,
+        "crowded": 22.2,
+        "closed": 7.2
+      },
+      "pct_edges_stairs": 7.8,
+      "pct_edges_oneway": 5.4
+    },
+    "landmarks": {
+      "per_scene": {
+        "min": 5,
+        "median": 7,
+        "mean": 6.95,
+        "max": 9
+      },
+      "type_count": {
+        "office": 1465,
+        "library": 1422,
+        "canteen": 1412,
+        "lab": 1408,
+        "lecture": 1394,
+        "dorm": 1385,
+        "clinic": 1383,
+        "parking": 1356,
+        "sports": 1338,
+        "gate": 1336
+      },
+      "scenes_with_duplicate_type": {
+        "office": 328,
+        "canteen": 303,
+        "lab": 294,
+        "clinic": 289,
+        "lecture": 286,
+        "dorm": 282,
+        "library": 281,
+        "sports": 271,
+        "parking": 271,
+        "gate": 269
+      },
+      "pct_scenes_any_duplicate": 85.5
+    },
+    "robot_heading": {
+      "DOWN": 492,
+      "LEFT": 503,
+      "RIGHT": 501,
+      "UP": 504
+    },
+    "weather": {
+      "dry": 1221,
+      "rain": 779
+    },
+    "mission": {
+      "chars": {
+        "min": 25,
+        "median": 101,
+        "mean": 104.17,
+        "max": 221
+      },
+      "words": {
+        "min": 6,
+        "median": 22,
+        "mean": 23.12,
+        "max": 50
+      },
+      "pct_no_diacritics": 12.1,
+      "pct_has_negation_word": 39.4,
+      "goal_type": {
+        "sports": 222,
+        "dorm": 217,
+        "library": 211,
+        "canteen": 210,
+        "lab": 195,
+        "office": 195,
+        "lecture": 193,
+        "clinic": 190,
+        "gate": 187,
+        "parking": 180
+      },
+      "pct_with_via": 31.5,
+      "via_type": {
+        "lab": 79,
+        "sports": 71,
+        "office": 71,
+        "lecture": 71,
+        "library": 66,
+        "dorm": 64,
+        "parking": 62,
+        "clinic": 55,
+        "gate": 51,
+        "canteen": 40
+      },
+      "pct_goal_duplicated_on_map": 26.4,
+      "goal_ref_kind": {
+        "near": 63,
+        "north": 32,
+        "south": 24,
+        "far": 75,
+        "east": 24,
+        "west": 22
+      },
+      "via_ref_kind": {
+        "east": 13,
+        "near": 19,
+        "north": 4,
+        "far": 34,
+        "west": 9,
+        "south": 6
+      },
+      "pct_urgent": 39.0,
+      "pct_fragile": 40.1
+    },
+    "labels": {
+      "per_robot": {
+        "0": {
+          "action_pct": {
+            "UP": 25.1,
+            "DOWN": 25.1,
+            "LEFT": 25.6,
+            "RIGHT": 24.2
+          },
+          "vs_heading_pct": {
+            "thẳng": 25.8,
+            "rẽ phải": 21.3,
+            "rẽ trái": 22.9,
+            "quay đầu": 30.0
+          },
+          "agree_with_robot0_pct": 100.0
+        },
+        "1": {
+          "action_pct": {
+            "UP": 24.7,
+            "DOWN": 24.5,
+            "LEFT": 25.9,
+            "RIGHT": 24.9
+          },
+          "vs_heading_pct": {
+            "thẳng": 17.5,
+            "rẽ phải": 21.5,
+            "rẽ trái": 24.8,
+            "quay đầu": 36.2
+          },
+          "agree_with_robot0_pct": 69.0
+        },
+        "2": {
+          "action_pct": {
+            "UP": 26.1,
+            "DOWN": 25.6,
+            "LEFT": 25.0,
+            "RIGHT": 23.4
+          },
+          "vs_heading_pct": {
+            "thẳng": 18.2,
+            "rẽ phải": 20.9,
+            "rẽ trái": 23.9,
+            "quay đầu": 37.0
+          },
+          "agree_with_robot0_pct": 84.7
+        },
+        "3": {
+          "action_pct": {
+            "UP": 25.1,
+            "DOWN": 25.1,
+            "LEFT": 26.2,
+            "RIGHT": 23.6
+          },
+          "vs_heading_pct": {
+            "thẳng": 19.2,
+            "rẽ phải": 21.4,
+            "rẽ trái": 23.9,
+            "quay đầu": 35.5
+          },
+          "agree_with_robot0_pct": 79.2
+        },
+        "4": {
+          "action_pct": {
+            "UP": 25.2,
+            "DOWN": 24.5,
+            "LEFT": 25.3,
+            "RIGHT": 24.9
+          },
+          "vs_heading_pct": {
+            "thẳng": 20.8,
+            "rẽ phải": 21.4,
+            "rẽ trái": 23.6,
+            "quay đầu": 34.2
+          },
+          "agree_with_robot0_pct": 70.0
+        },
+        "5": {
+          "action_pct": {
+            "UP": 24.7,
+            "DOWN": 25.1,
+            "LEFT": 26.5,
+            "RIGHT": 23.8
+          },
+          "vs_heading_pct": {
+            "thẳng": 34.8,
+            "rẽ phải": 30.4,
+            "rẽ trái": 30.7,
+            "quay đầu": 4.2
+          },
+          "agree_with_robot0_pct": 69.5
+        },
+        "6": {
+          "action_pct": {
+            "UP": 25.1,
+            "DOWN": 25.0,
+            "LEFT": 25.1,
+            "RIGHT": 24.8
+          },
+          "vs_heading_pct": {
+            "thẳng": 18.0,
+            "rẽ phải": 20.8,
+            "rẽ trái": 24.9,
+            "quay đầu": 36.4
+          },
+          "agree_with_robot0_pct": 77.8
+        },
+        "7": {
+          "action_pct": {
+            "UP": 25.2,
+            "DOWN": 24.2,
+            "LEFT": 26.0,
+            "RIGHT": 24.6
+          },
+          "vs_heading_pct": {
+            "thẳng": 25.8,
+            "rẽ phải": 25.8,
+            "rẽ trái": 27.1,
+            "quay đầu": 21.4
+          },
+          "agree_with_robot0_pct": 84.5
+        },
+        "8": {
+          "action_pct": {
+            "UP": 25.3,
+            "DOWN": 25.1,
+            "LEFT": 27.3,
+            "RIGHT": 22.3
+          },
+          "vs_heading_pct": {
+            "thẳng": 29.7,
+            "rẽ phải": 35.7,
+            "rẽ trái": 18.6,
+            "quay đầu": 16.0
+          },
+          "agree_with_robot0_pct": 74.3
+        },
+        "9": {
+          "action_pct": {
+            "UP": 24.8,
+            "DOWN": 23.6,
+            "LEFT": 25.6,
+            "RIGHT": 25.9
+          },
+          "vs_heading_pct": {
+            "thẳng": 26.6,
+            "rẽ phải": 22.8,
+            "rẽ trái": 25.8,
+            "quay đầu": 24.9
+          },
+          "agree_with_robot0_pct": 55.2
+        }
+      },
+      "distinct_actions_per_scene_pct": {
+        "1": 10.8,
+        "2": 71.8,
+        "3": 16.9,
+        "4": 0.4
+      },
+      "pct_all_10_agree": 10.8
+    }
+  },
+  "validation": {
+    "rows": 3000,
+    "scenes": 300,
+    "images": 300,
+    "has_labels": true,
+    "has_scenes_json": true,
+    "image": {
+      "format": {
+        "JPEG": 103,
+        "PNG": 197
+      },
+      "top_sizes": {
+        "1152x864": 102,
+        "1120x840": 49,
+        "1024x768": 35,
+        "1024x1024": 22,
+        "1136x848": 17,
+        "1024x896": 12,
+        "960x960": 10,
+        "1120x848": 9
+      },
+      "n_distinct_sizes": 26
+    },
+    "style": {
+      "sketch": 72,
+      "night": 77,
+      "print": 71,
+      "classic": 80
+    },
+    "degradation": {
+      "rotation_deg": {
+        "min": -2.98,
+        "median": 0.0,
+        "mean": -0.07,
+        "max": 3.0
+      },
+      "pct_rotated": 57.3,
+      "pct_blur": 40.3,
+      "pct_jpeg": 34.3,
+      "jpeg_quality": {
+        "min": 45,
+        "median": 57,
+        "mean": 57.99,
+        "max": 75
+      }
+    },
+    "legend_swapped": {
+      "pct_scenes": 34.7,
+      "patterns": {
+        "{\"covered\": \"crowded\", \"crowded\": \"covered\", \"normal\": \"normal\"}": 24,
+        "{\"covered\": \"normal\", \"crowded\": \"covered\", \"normal\": \"crowded\"}": 22,
+        "{\"covered\": \"normal\", \"crowded\": \"crowded\", \"normal\": \"covered\"}": 21,
+        "{\"covered\": \"covered\", \"crowded\": \"normal\", \"normal\": \"crowded\"}": 19,
+        "{\"covered\": \"crowded\", \"crowded\": \"normal\", \"normal\": \"covered\"}": 18
+      }
+    },
+    "grid": {
+      "rows_x_cols_top": {
+        "9x8": 27,
+        "9x6": 26,
+        "7x9": 23,
+        "9x7": 22,
+        "8x7": 21,
+        "7x8": 21,
+        "8x8": 20,
+        "8x9": 20,
+        "6x7": 19,
+        "7x6": 18
+      },
+      "rows": {
+        "min": 6,
+        "median": 8,
+        "mean": 7.66,
+        "max": 9
+      },
+      "cols": {
+        "min": 6,
+        "median": 8,
+        "mean": 7.5,
+        "max": 9
+      },
+      "missing_nodes_per_scene": {
+        "min": 1,
+        "median": 3,
+        "mean": 3.18,
+        "max": 6
+      },
+      "edges_per_scene": {
+        "min": 36,
+        "median": 77,
+        "mean": 76.67,
+        "max": 133
+      },
+      "edge_density_vs_full_grid": {
+        "min": 0.6,
+        "median": 0.764,
+        "mean": 0.77,
+        "max": 0.924
+      },
+      "edge_status_pct": {
+        "normal": 36.5,
+        "covered": 27.5,
+        "crowded": 26.1,
+        "closed": 10.0
+      },
+      "pct_edges_stairs": 10.6,
+      "pct_edges_oneway": 7.2
+    },
+    "landmarks": {
+      "per_scene": {
+        "min": 5,
+        "median": 7,
+        "mean": 6.9,
+        "max": 9
+      },
+      "type_count": {
+        "sports": 246,
+        "canteen": 221,
+        "gate": 215,
+        "lab": 207,
+        "dorm": 205,
+        "lecture": 199,
+        "office": 199,
+        "clinic": 195,
+        "library": 194,
+        "parking": 190
+      },
+      "scenes_with_duplicate_type": {
+        "sports": 85,
+        "gate": 73,
+        "canteen": 69,
+        "lab": 69,
+        "dorm": 67,
+        "lecture": 66,
+        "library": 62,
+        "clinic": 59,
+        "office": 59,
+        "parking": 58
+      },
+      "pct_scenes_any_duplicate": 100.0
+    },
+    "robot_heading": {
+      "LEFT": 76,
+      "RIGHT": 76,
+      "DOWN": 79,
+      "UP": 69
+    },
+    "weather": {
+      "rain": 112,
+      "dry": 188
+    },
+    "mission": {
+      "chars": {
+        "min": 36,
+        "median": 159,
+        "mean": 155.93,
+        "max": 270
+      },
+      "words": {
+        "min": 7,
+        "median": 34,
+        "mean": 34.18,
+        "max": 60
+      },
+      "pct_no_diacritics": 24.7,
+      "pct_has_negation_word": 80.7,
+      "goal_type": {
+        "canteen": 40,
+        "gate": 34,
+        "office": 33,
+        "lab": 32,
+        "clinic": 31,
+        "dorm": 31,
+        "library": 27,
+        "lecture": 26,
+        "sports": 26,
+        "parking": 20
+      },
+      "pct_with_via": 50.3,
+      "via_type": {
+        "sports": 24,
+        "gate": 18,
+        "lab": 17,
+        "dorm": 16,
+        "library": 15,
+        "office": 14,
+        "canteen": 13,
+        "parking": 13,
+        "clinic": 12,
+        "lecture": 9
+      },
+      "pct_goal_duplicated_on_map": 49.3,
+      "goal_ref_kind": {
+        "north": 21,
+        "west": 20,
+        "south": 22,
+        "far": 19,
+        "near": 21,
+        "east": 13
+      },
+      "via_ref_kind": {
+        "near": 13,
+        "far": 14,
+        "south": 5,
+        "west": 7,
+        "north": 6,
+        "east": 10
+      },
+      "pct_urgent": 38.3,
+      "pct_fragile": 36.7
+    },
+    "labels": {
+      "per_robot": {
+        "0": {
+          "action_pct": {
+            "UP": 24.0,
+            "DOWN": 27.3,
+            "LEFT": 27.0,
+            "RIGHT": 21.7
+          },
+          "vs_heading_pct": {
+            "thẳng": 31.0,
+            "rẽ phải": 19.7,
+            "rẽ trái": 19.7,
+            "quay đầu": 29.7
+          },
+          "agree_with_robot0_pct": 100.0
+        },
+        "1": {
+          "action_pct": {
+            "UP": 25.0,
+            "DOWN": 26.0,
+            "LEFT": 25.7,
+            "RIGHT": 23.3
+          },
+          "vs_heading_pct": {
+            "thẳng": 15.7,
+            "rẽ phải": 22.3,
+            "rẽ trái": 21.3,
+            "quay đầu": 40.7
+          },
+          "agree_with_robot0_pct": 35.7
+        },
+        "2": {
+          "action_pct": {
+            "UP": 26.0,
+            "DOWN": 23.7,
+            "LEFT": 26.7,
+            "RIGHT": 23.7
+          },
+          "vs_heading_pct": {
+            "thẳng": 17.3,
+            "rẽ phải": 17.7,
+            "rẽ trái": 22.7,
+            "quay đầu": 42.3
+          },
+          "agree_with_robot0_pct": 70.3
+        },
+        "3": {
+          "action_pct": {
+            "UP": 21.7,
+            "DOWN": 23.7,
+            "LEFT": 30.7,
+            "RIGHT": 24.0
+          },
+          "vs_heading_pct": {
+            "thẳng": 17.7,
+            "rẽ phải": 18.7,
+            "rẽ trái": 22.0,
+            "quay đầu": 41.7
+          },
+          "agree_with_robot0_pct": 48.7
+        },
+        "4": {
+          "action_pct": {
+            "UP": 23.7,
+            "DOWN": 27.0,
+            "LEFT": 27.3,
+            "RIGHT": 22.0
+          },
+          "vs_heading_pct": {
+            "thẳng": 18.7,
+            "rẽ phải": 23.3,
+            "rẽ trái": 20.7,
+            "quay đầu": 37.3
+          },
+          "agree_with_robot0_pct": 43.3
+        },
+        "5": {
+          "action_pct": {
+            "UP": 22.0,
+            "DOWN": 24.7,
+            "LEFT": 27.3,
+            "RIGHT": 26.0
+          },
+          "vs_heading_pct": {
+            "thẳng": 39.7,
+            "rẽ phải": 29.0,
+            "rẽ trái": 29.0,
+            "quay đầu": 2.3
+          },
+          "agree_with_robot0_pct": 65.3
+        },
+        "6": {
+          "action_pct": {
+            "UP": 26.0,
+            "DOWN": 28.3,
+            "LEFT": 23.0,
+            "RIGHT": 22.7
+          },
+          "vs_heading_pct": {
+            "thẳng": 21.0,
+            "rẽ phải": 20.7,
+            "rẽ trái": 23.7,
+            "quay đầu": 34.7
+          },
+          "agree_with_robot0_pct": 56.3
+        },
+        "7": {
+          "action_pct": {
+            "UP": 25.0,
+            "DOWN": 25.7,
+            "LEFT": 25.3,
+            "RIGHT": 24.0
+          },
+          "vs_heading_pct": {
+            "thẳng": 28.7,
+            "rẽ phải": 25.3,
+            "rẽ trái": 29.3,
+            "quay đầu": 16.7
+          },
+          "agree_with_robot0_pct": 73.3
+        },
+        "8": {
+          "action_pct": {
+            "UP": 22.0,
+            "DOWN": 23.7,
+            "LEFT": 30.3,
+            "RIGHT": 24.0
+          },
+          "vs_heading_pct": {
+            "thẳng": 34.0,
+            "rẽ phải": 33.3,
+            "rẽ trái": 20.3,
+            "quay đầu": 12.3
+          },
+          "agree_with_robot0_pct": 71.3
+        },
+        "9": {
+          "action_pct": {
+            "UP": 25.7,
+            "DOWN": 24.3,
+            "LEFT": 27.0,
+            "RIGHT": 23.0
+          },
+          "vs_heading_pct": {
+            "thẳng": 27.7,
+            "rẽ phải": 23.7,
+            "rẽ trái": 23.0,
+            "quay đầu": 25.7
+          },
+          "agree_with_robot0_pct": 44.0
+        }
+      },
+      "distinct_actions_per_scene_pct": {
+        "1": 3.0,
+        "2": 72.3,
+        "3": 22.0,
+        "4": 2.7
+      },
+      "pct_all_10_agree": 3.0
+    }
+  },
+  "test": {
+    "rows": 12000,
+    "scenes": 1200,
+    "images": 1200,
+    "has_labels": false,
+    "has_scenes_json": false,
+    "image": {
+      "format": {
+        "PNG": 814,
+        "JPEG": 386
+      },
+      "top_sizes": {
+        "1152x864": 375,
+        "1120x840": 208,
+        "1024x768": 163,
+        "1024x1024": 80,
+        "1136x848": 60,
+        "1024x896": 54,
+        "960x960": 45,
+        "1136x864": 31
+      },
+      "n_distinct_sizes": 37
+    }
+  }
+}

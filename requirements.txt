@@ -1,0 +1,34 @@
+# Phenikaa Campus Courier v2 — thư viện cho toàn bộ quá trình.
+# Môi trường: conda env "courier" (Python 3.11). GPU driver hỗ trợ CUDA 12.4.
+#
+# Cài torch đúng bản CUDA trước, rồi cài phần còn lại:
+#   conda activate courier
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+#   pip install -r requirements.txt
+# (máy không có GPU: bỏ --index-url để lấy bản CPU)
+
+# ---- Chung: đọc ảnh, số học, cấu hình ----
+Pillow>=10.0                       # đọc ảnh PNG palette / JPEG, crop, vẽ debug
+numpy>=1.24
+scipy>=1.10                        # gom cụm hàng/cột, gán cặp (linear_sum_assignment), ndimage
+pyyaml>=6.0                        # configs/cv/*.yaml
+tqdm>=4.66
+
+# ---- Khâu CV (LayoutNet, NodePatchNet, EdgePatchNet, CropClsNet) ----
+torch>=2.1
+torchvision>=0.16
+timm>=0.9.12                       # backbone pretrained: resnet18, efficientnet_b0, mobilenetv3
+segmentation-models-pytorch>=0.3.3 # U-Net cho LayoutNet
+
+# ---- Theo dõi huấn luyện, hình vẽ ----
+tensorboard>=2.14
+matplotlib>=3.7                    # confusion matrix, overlay debug
+
+# ---- Tìm siêu tham số (không bắt buộc: thiếu thì sweep.py chạy random search) ----
+optuna>=3.4
+
+# ---- Khâu NLP (phiên sau): PhoBERT / mô hình ngôn ngữ nhỏ ----
+transformers>=4.40
+
+# ---- Kiểm thử ----
+pytest>=7.4
